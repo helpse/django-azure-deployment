@@ -1,10 +1,16 @@
 # Creación de Web App en Azure
 Dentro del Panel de Azure ir a `New > Web + Mobile > Web App` y llenar los datos (app name, resource group ).
+
 Desplegaremos el código desde nuestro repositorio local Git, para configurar ello vamos a 
-`Deployment Options > Choose Source > Local Git Repository` 
-Para obtener la url de Git correspondiente vamos a 
+
+`Deployment Options > Choose Source > Local Git Repository`
+
+Para obtener la url de Git correspondiente vamos a
+
 `Properties > GIT Url`
-Copiamos la url y la agregamos a nuestro proyecto con el siguiente comando 
+
+Copiamos la url y la agregamos a nuestro proyecto con el siguiente comando
+
 `git remote add azure {GIT_URL}`
 
 # Configuracion del proyecto local
@@ -26,12 +32,14 @@ Este archivo será ejecutado por el servidor IIS, este script cargará el entorn
 Para que las dependencias sean instaladas asegurese de tenerlas especificadas en el archivo **requirements.txt**.
 
 Para configurar los archivos estáticos agregue esta linea en el archivo **settings.py** 
+
 `STATIC_ROOT = os.path.join(BASE_DIR, 'static')`
 
 Es importante tener un archivo **.gitignore** en donde ignoremos el entorno virtual, ya que este lo creará Azure.
 
 # Despliegue del proyecto
 Comitear todos los cambios con git y hacer un push a la url que se obtuvo al inicio 
+
 `git push azure master`
 
 Azure recibirá los cambios y ejecutará lo siguiente:
