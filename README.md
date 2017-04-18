@@ -1,4 +1,7 @@
-# Creación de Web App en Azure
+# Desplegar un proyecto Django en Azure
+Desplegaremos un proyecto Django usando Web App Service en Azure desde un repositorio local.
+
+## Creación de la app
 Dentro del Panel de Azure ir a `New > Web + Mobile > Web App` y llenar los datos (app name, resource group ).
 
 Desplegaremos el código desde nuestro repositorio local Git, para configurar ello vamos a 
@@ -13,7 +16,7 @@ Copiamos la url y la agregamos a nuestro proyecto con el siguiente comando
 
 `git remote add azure {GIT_URL}`
 
-# Configuracion del proyecto local
+## Configuracion del proyecto local
 En la raiz de nustro proyecto copiamos los 4 archivos que hay en este repositorio:
 * ptvz_virtualenv_proxy.py
 * runtime.txt
@@ -40,7 +43,7 @@ Para configurar los archivos estáticos agregue esta linea en el archivo **setti
 
 Es importante tener un archivo **.gitignore** en donde ignoremos el entorno virtual, ya que este lo creará Azure.
 
-# Despliegue del proyecto
+## Despliegue del proyecto
 Comitear todos los cambios con git y hacer un push a la url que se obtuvo al inicio 
 
 `git push azure master`
@@ -49,7 +52,7 @@ Azure recibirá los cambios y ejecutará lo siguiente:
 * Si aún no hay un entorno virtual lo creará e instalará las dependencias.
 * Ejecutará el comando collectstatic de Django.
 
-# Resolución de problemas
+## Resolución de problemas
 Para obtener mas detalles asegurese de configurar el log en `Diagnostics Logs`. Azure por defecto no muestra mucho detalles sobre los errores de tipo 500, para poder verlos puede agregar la siguiente linea en **web.config**
 ```
   <system.webServer>
