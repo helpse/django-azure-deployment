@@ -41,6 +41,13 @@ Para configurar los archivos estáticos agregue esta linea en el archivo **setti
 
 `STATIC_ROOT = os.path.join(BASE_DIR, 'static')`
 
+Agregar la url de tu proyecto en los hosts permitidos en el archivo settings.py, por ejemplo.
+```
+ALLOWED_HOSTS = [
+    'myproject.azurewebsites.net',
+]
+```
+
 Es importante tener un archivo **.gitignore** en donde ignoremos el entorno virtual, ya que este lo creará Azure.
 
 ## Despliegue del proyecto
