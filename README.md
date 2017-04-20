@@ -62,6 +62,11 @@ Azure recibirá los cambios y ejecutará lo siguiente:
 ## Resolución de problemas
 Para obtener mas detalles asegurese de configurar el log en `Diagnostics Logs`. Azure por defecto no muestra mucho detalles sobre los errores de tipo 500, para poder verlos puede agregar la siguiente linea en **web.config**
 ```
+  <system.web>
+    ...
+    <customErrors="off" />
+    ...
+  </system.web>
   <system.webServer>
     ...
     <httpErrors errorMode="Detailed" />
