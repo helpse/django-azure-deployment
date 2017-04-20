@@ -18,7 +18,7 @@ Copiamos la url y la agregamos a nuestro proyecto con el siguiente comando
 
 ## Configuracion del proyecto local
 En la raiz de nustro proyecto copiamos los 4 archivos que hay en este repositorio:
-* ptvz_virtualenv_proxy.py
+* ptvs_virtualenv_proxy.py
 * runtime.txt
 * web.2.7.config
 * web.3.4.config
@@ -31,7 +31,7 @@ Aqui especificamos que versión de python usaremos podemos escoger entre 2.7 y 3
 
 Estos son archivos de configuración para el servidor, según la versión escogida en **runtime.txt** se usará uno u otro. Aquí modificaremos la linea 4 `{PROJECT_NAME}.wsgi.application` y especificamos la ruta de la aplicación wsgi por ejemplo `myproject.wsgi.application`.
 
-**ptvz_virtualenv_proxy.py**
+**ptvs_virtualenv_proxy.py**
 
 Este archivo será ejecutado por el servidor IIS, este script cargará el entorno virtual e importará la app wsgi buscando la ruta que se especifícó en **web.config**. Para más información sobre el proceso puede verse [wfastcgi](https://pypi.python.org/pypi/wfastcgi "wfastcgi")
 
